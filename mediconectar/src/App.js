@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Login from './components/login.component'
 import SignUp from './components/signup.component'
 import DoctorProfile from './components/doctor.component';
+import AdministradorProfile from './components/administrador.component';
 
 function AuthLayout({ children }) {
   return (
@@ -31,6 +32,8 @@ function App() {
 
           {/* Ruta independiente para DoctorProfile sin la estructura específica */}
           <Route path="/doctor" element={<DoctorProfile />} />
+          {/* Ruta independiente para AdministradorProfile sin la estructura específica */}
+          <Route path="/administrador" element={<AdministradorProfile />} />
 
           {/* Ruta por defecto (puedes redirigir a /sign-in o mostrar un componente por defecto) */}
           <Route path="/*" element={<AuthLayout><Login /></AuthLayout>} />
