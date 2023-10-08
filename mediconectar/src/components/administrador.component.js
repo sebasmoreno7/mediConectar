@@ -40,11 +40,11 @@ export default function AdministradorProfile() {
                   className="rounded-circle"
                   style={{ width: '150px' }}
                   fluid />
-                <p className="text-muted mb-1">Médico Especialista</p>
-                <p className="text-muted mb-4">Área de Especialización, Ciudad</p>
+                <p className="text-muted mb-1">Administrador</p>
+                <p className="text-muted mb-4">Área de Administración</p>
                 <div className="d-flex justify-content-center mb-2">
-                  <MDBBtn>Seguir</MDBBtn>
-                  <MDBBtn outline className="ms-1">Mensaje</MDBBtn>
+                  <MDBBtn>Aceptar</MDBBtn>
+                  <MDBBtn outline className="ms-1">Cancelar</MDBBtn>
                 </div>
               </MDBCardBody>
             </MDBCard>
@@ -65,7 +65,7 @@ export default function AdministradorProfile() {
                     <MDBCardText>Nombre Completo</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Dr. Juan Pérez</MDBCardText>
+                    <MDBCardText className="text-muted">Ad. Wilmar Capera</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -74,7 +74,7 @@ export default function AdministradorProfile() {
                     <MDBCardText>Correo Electrónico</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">juan.perez@example.com</MDBCardText>
+                    <MDBCardText className="text-muted">wilmar.capera@example.com</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -88,28 +88,28 @@ export default function AdministradorProfile() {
                 <MDBCol md="6">
                     <MDBCard className="mb-4 mb-md-0">
                         <MDBCardBody>
-                        <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">Citas</span> Próximas Citas Médicas</MDBCardText>
+                        <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">Historial</span> Próximas Citas Médicas</MDBCardText>
                         <div>
-                            <h6 className="text-primary">semana cinco</h6>
+                            <h6 className="text-primary">Resumen de citas</h6>
                             <ul className="list-unstyled">
                             <li>
-                                <strong>Fecha:</strong> 10 de octubre de 2023
+                                <strong>Fecha:</strong> 15 de octubre de 2023
                                 <br />
-                                <strong>Hora:</strong> 10:00 AM
+                                <strong>Hora:</strong> 8:00 AM
+                                <br />
+                                <strong>Medicina general:</strong> Sí
+                            </li>
+                            <li>
+                                <strong>Fecha:</strong> 16 de octubre de 2023
+                                <br />
+                                <strong>Hora:</strong> 4:30 PM
                                 <br />
                                 <strong>Prioritaria:</strong> Sí
                             </li>
                             <li>
-                                <strong>Fecha:</strong> 12 de octubre de 2023
+                                <strong>Fecha:</strong> 17 de octubre de 2023
                                 <br />
-                                <strong>Hora:</strong> 2:30 PM
-                                <br />
-                                <strong>Prioritaria:</strong> Sí
-                            </li>
-                            <li>
-                                <strong>Fecha:</strong> 14 de octubre de 2023
-                                <br />
-                                <strong>Hora:</strong> 4:15 PM
+                                <strong>Hora:</strong> 5:20 PM
                                 <br />
                                 <strong>Prioritaria:</strong> Sí
                             </li>
@@ -123,28 +123,28 @@ export default function AdministradorProfile() {
                 <MDBCol md="6">
                     <MDBCard className="mb-4 mb-md-0">
                         <MDBCardBody>
-                        <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">Citas</span> Anteriores Citas Médicas</MDBCardText>
+                        <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">Historial</span> Anteriores Citas Médicas</MDBCardText>
                         <div>
-                            <h6 className="text-primary">Historial</h6>
+                            <h6 className="text-primary">Resumen de Citas</h6>
                             <ul className="list-unstyled">
-                            <li>
-                                <strong>Fecha:</strong> 10 de septiembre de 2023
-                                <br />
-                                <strong>Hora:</strong> 11:30 AM
-                                <br />
-                                <strong>Prioritaria:</strong> Sí
-                            </li>
-                            <li>
-                                <strong>Fecha:</strong> 08 de septiembre de 2023
-                                <br />
-                                <strong>Hora:</strong> 6:30 PM
-                                <br />
-                                <strong>Prioritaria:</strong> Sí
-                            </li>
                             <li>
                                 <strong>Fecha:</strong> 05 de septiembre de 2023
                                 <br />
-                                <strong>Hora:</strong> 2:15 PM
+                                <strong>Hora:</strong> 11:20 AM
+                                <br />
+                                <strong>Prioritaria:</strong> Sí
+                            </li>
+                            <li>
+                                <strong>Fecha:</strong> 04 de septiembre de 2023
+                                <br />
+                                <strong>Hora:</strong> 7:30 AM
+                                <br />
+                                <strong>Medicina general:</strong> Sí
+                            </li>
+                            <li>
+                                <strong>Fecha:</strong> 03 de septiembre de 2023
+                                <br />
+                                <strong>Hora:</strong> 3:30 PM
                                 <br />
                                 <strong>Prioritaria:</strong> Sí
                             </li>
