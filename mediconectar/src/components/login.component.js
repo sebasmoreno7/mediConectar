@@ -4,6 +4,7 @@ export default class Login extends Component {
   render() {
     return (
       <form>
+        <h1>Mediconectar</h1>
         <h3>Sign In</h3>
 
         <div className="mb-3">
