@@ -1,32 +1,36 @@
-import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import React from 'react'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
-const App = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+import Login from './components/login.component'
+import SignUp from './components/signup.component'
+import DoctorProfile from './components/doctor.component';
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
+function App() {
   return (
-    <div className="container">
-      <h1>Iniciar sesión</h1>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="email">
-          <Form.Label>Correo electrónico</Form.Label>
-          <Form.Control type="email" placeholder="Ingresa tu correo electrónico" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </Form.Group>
-        <Form.Group controlId="password">
-          <Form.Label>Contraseña</Form.Label>
-          <Form.Control type="password" placeholder="Ingresa tu contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Inicializar sesión
-        </Button>
-      </Form>
-    </div>
-  );
-};
+    <Router>
+      <div className="App">
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+          {/* ... (tu barra de navegación) */}
+        </nav>
 
-export default App;
+        <Routes>
+          {/* Rutas de autenticación */}
+          <Route path="/sign-in" element={<Login />} />
+          <Route path="/sign-up" element={<SignUp />} />
+
+          {/* Ruta independiente para DoctorProfile */}
+          <Route path="/doctor" element={<DoctorProfile />} />
+
+          {/* Ruta por defecto (puedes redirigir a /sign-in o mostrar un componente por defecto) */}
+          <Route path="/*" element={<Login />} />
+        </Routes>
+      </div>
+    </Router>
+  )
+}
+
+
+
+export default App
