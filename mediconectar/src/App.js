@@ -7,6 +7,7 @@ import Login from './components/login.component'
 import SignUp from './components/signup.component'
 import DoctorProfile from './components/doctor.component';
 import AdministradorProfile from './components/administrador.component';
+import AgendarCitaProfile from './components/agendarcita.component';
 
 function AuthLayout({ children }) {
   return (
@@ -34,6 +35,8 @@ function App() {
           <Route path="/doctor" element={<DoctorProfile />} />
           {/* Ruta independiente para AdministradorProfile sin la estructura específica */}
           <Route path="/administrador" element={<AdministradorProfile />} />
+          {/* Ruta independiente para AdministradorProfile sin la estructura específica */}
+          <Route path="/agendar-cita" element={<AgendarCitaProfile />} />
 
           {/* Ruta por defecto (puedes redirigir a /sign-in o mostrar un componente por defecto) */}
           <Route path="/*" element={<AuthLayout><Login /></AuthLayout>} />
