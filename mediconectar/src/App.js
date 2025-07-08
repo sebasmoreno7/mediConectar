@@ -1,41 +1,54 @@
-import React from 'react'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import React from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-import Login from './components/login.component'
-import SignUp from './components/signup.component'
+import Login from './components/login.component';
+import SignUp from './components/signup.component';
 import DoctorProfile from './components/doctor.component';
 import AdministradorProfile from './components/administrador.component';
+import PacienteProfile from './components/paciente.component';
 
 function AuthLayout({ children }) {
   return (
     <div className="auth-wrapper">
-      <div className="auth-inner">
-        {children}
-      </div>
+      <div className="auth-inner">{children}</div>
     </div>
   );
 }
+
 function App() {
   return (
     <Router>
       <div className="App">
         <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-          {/* ... (tu barra de navegación) */}
+          <div className="container">
+            <Link className="navbar-brand" to={'/sign-in'}>
+              MediConectar
+            </Link>
+            <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item">
+                  <Link className="nav-link" to={'/sign-in'}>
+                    Ingresar
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to={'/sign-up'}>
+                    Registrarse
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </nav>
 
         <Routes>
-          {/* Rutas de autenticación con la estructura específica */}
           <Route path="/sign-in" element={<AuthLayout><Login /></AuthLayout>} />
           <Route path="/sign-up" element={<AuthLayout><SignUp /></AuthLayout>} />
-
-          {/* Ruta independiente para DoctorProfile sin la estructura específica */}
           <Route path="/doctor" element={<DoctorProfile />} />
-          {/* Ruta independiente para AdministradorProfile sin la estructura específica */}
+          <Route path="/paciente" element={<PacienteProfile />} />
           <Route path="/administrador" element={<AdministradorProfile />} />
-
-          {/* Ruta por defecto (puedes redirigir a /sign-in o mostrar un componente por defecto) */}
           <Route path="/*" element={<AuthLayout><Login /></AuthLayout>} />
         </Routes>
       </div>
@@ -43,4 +56,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
