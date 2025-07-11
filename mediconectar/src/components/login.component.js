@@ -1,52 +1,68 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default class Login extends Component {
-  render() {
-    return (
-      <form>
-        <h1>Mediconectar</h1>
-        <h3>Sign In</h3>
+export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [role, setRole] = useState('paciente');
+  const navigate = useNavigate();
 
-        <div className="mb-3">
-          <label>Email address</label>
-          <input
-            type="email"
-            className="form-control"
-            placeholder="Enter email"
-          />
-        </div>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (role === 'doctor') {
+      navigate('/doctor');
+    } else {
+      navigate('/paciente');
+    }
+  };
 
-        <div className="mb-3">
-          <label>Password</label>
-          <input
-            type="password"
-            className="form-control"
-            placeholder="Enter password"
-          />
-        </div>
+  return (
+    <form onSubmit={handleSubmit}>
+      <h1>Mediconectar</h1>
+      <h3>Sign In</h3>
 
-        <div className="mb-3">
-          <div className="custom-control custom-checkbox">
-            <input
-              type="checkbox"
-              className="custom-control-input"
-              id="customCheck1"
-            />
-            <label className="custom-control-label" htmlFor="customCheck1">
-              Remember me
-            </label>
-          </div>
-        </div>
+      <div className="mb-3">
+        <label>Email address</label>
+        <input
+          type="email"
+          className="form-control"
+          placeholder="Enter email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
 
-        <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </div>
-        <p className="forgot-password text-right">
-          Forgot <a href="#">password?</a>
-        </p>
-      </form>
-    )
-  }
+      <div className="mb-3">
+        <label>Password</label>
+        <input
+          type="password"
+          className="form-control"
+          placeholder="Enter password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+
+      <div className="mb-3">
+        <label>Rol</label>
+        <select
+          className="form-control"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+        >
+          <option value="paciente">Paciente</option>
+          <option value="doctor">Médico</option>
+        </select>
+      </div>
+
+      <div className="d-grid">
+        <button type="submit" className="btn btn-primary">
+          Ingresar
+        </button>
+      </div>
+      <p className="forgot-password text-right">
+        <a href="/sign-up">Registrarse</a>
+      </p>
+    </form>
+  );
 }
