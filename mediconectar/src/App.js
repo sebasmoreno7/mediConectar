@@ -30,12 +30,12 @@ function App() {
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
                   <Link className="nav-link" to={'/sign-in'}>
-                    Ingresar
+                    Explorar demo
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to={'/sign-up'}>
-                    Registrarse
+                    Acerca del registro
                   </Link>
                 </li>
               </ul>
