@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [role, setRole] = useState('paciente');
   const navigate = useNavigate();
 
@@ -19,33 +17,13 @@ export default function Login() {
   return (
     <form onSubmit={handleSubmit}>
       <h1>Mediconectar</h1>
-      <h3>Sign In</h3>
+      <h3>Explorar prototipo</h3>
+      <p>Demo sin cuentas ni autenticación. No ingreses datos personales o médicos reales.</p>
 
       <div className="mb-3">
-        <label>Email address</label>
-        <input
-          type="email"
-          className="form-control"
-          placeholder="Enter email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-
-      <div className="mb-3">
-        <label>Password</label>
-        <input
-          type="password"
-          className="form-control"
-          placeholder="Enter password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-
-      <div className="mb-3">
-        <label>Rol</label>
+        <label htmlFor="demo-role">Vista de ejemplo</label>
         <select
+          id="demo-role"
           className="form-control"
           value={role}
           onChange={(e) => setRole(e.target.value)}
@@ -57,11 +35,11 @@ export default function Login() {
 
       <div className="d-grid">
         <button type="submit" className="btn btn-primary">
-          Ingresar
+          Ver vista
         </button>
       </div>
       <p className="forgot-password text-right">
-        <a href="/sign-up">Registrarse</a>
+        <a href="/sign-up">Acerca del registro</a>
       </p>
     </form>
   );
